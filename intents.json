@@ -1,0 +1,171 @@
+{
+  "intents": [
+    {
+      "tag": "introduction",
+      "patterns": [
+        "Hi",
+        "Hello",
+        "Aap kya kar sakte ho?",
+        "Namaste",
+        "Kya aap meri help kar sakte ho?"
+      ],
+      "responses": [
+        "Hello, mai aapki in vishayo me madad kar sakti hu: Admission, Eligiblity, Program Details, Hostel, Fees, Schlorship, Training, Location, Seats aadi. Aap kya janna chahenge?"
+      ]
+    },
+    {
+      "tag": "admission_interest",
+      "patterns": [
+        "Main nursing college mein admission lena chahta hoon",
+        "Mujhe nursing program ke liye apply karna hai",
+        "Admission ke liye kya karna hoga",
+        "B.Sc Nursing ka admission chahiye",
+        "How can I get admission in nursing college"
+      ],
+      "responses": [
+        "Kya aape 12th me biology padha hai?"
+      ]
+    },
+    {
+      "tag": "eligibility_check",
+      "patterns": [
+        "Haan maine 12th mein biology padha hai",
+        "Yes I had biology in class 12",
+        "Mera 12th mein subject biology tha",
+        "Biology tha mere paas 12th mein"
+      ],
+      "responses": [
+        "Bahut achha! Humare yahan B.Sc Nursing ka ek full-time program hai."
+      ]
+    },
+    {
+      "tag": "ineligible_no_biology",
+      "patterns": [
+        "Nahi maine biology nahi padha",
+        "Mera subject commerce tha",
+        "Maine science liya tha par biology nahi tha",
+        "No I did not study biology"
+      ],
+      "responses": [
+        "B.Sc Nursing mein admission ke liye Biology avashyak hai."
+      ]
+    },
+    {
+      "tag": "program_details",
+      "patterns": [
+        "B.Sc nursing program ke baare mein batayein",
+        "Course ki details dijiye",
+        "Nursing program ka structure kya hai",
+        "Tell me about B.Sc nursing course"
+      ],
+      "responses": [
+        "B.Sc Nursing program ek 4 saal ka full-time course hai, jisme hospital training bhi hoti hai."
+      ]
+    },
+    {
+      "tag": "fees_info",
+      "patterns": [
+        "Fee structure kya hai",
+        "Is course ki fees kitni hai",
+        "Kitna kharcha aayega is program ka",
+        "What is the total fee"
+      ],
+      "responses": [
+        "Fee structure:\n- Tuition Fee: ₹60,000\n- Bus Fee: ₹10,000\n- Total: ₹70,000 per year\nInstallments:\n- ₹30,000 at admission\n- ₹20,000 after 1st semester\n- ₹20,000 after 2nd semester\n"
+      ]
+    },
+    {
+      "tag": "hostel_training",
+      "patterns": [
+        "Hostel ki facilities batao",
+        "Accommodation available hai kya",
+        "Hospital training hoti hai kya",
+        "Hostel aur training ka kya system hai"
+      ],
+      "responses": [
+        "Hostel mein 24x7 paani aur bijli, CCTV surveillance aur warden ki suvidha hai. Aapko hospital training ka bhi mauka milega jisme real patients ke saath kaam karenge."
+      ]
+    },
+    {
+      "tag": "college_location",
+      "patterns": [
+        "College kahan hai",
+        "Location batao nursing college ki",
+        "Nursing college Delhi mein hai kya",
+        "Where is your nursing college"
+      ],
+      "responses": [
+        "College Delhi mein sthit hai. "
+      ]
+    },
+    {
+      "tag": "recognition",
+      "patterns": [
+        "College ka approval kis se hai",
+        "Recognition details kya hain",
+        "Kya college INC se approved hai",
+        "Nursing council ka approval hai kya"
+      ],
+      "responses": [
+        "Hamara college Indian Nursing Council (INC), Delhi se recognize hai."
+      ]
+    },
+    {
+      "tag": "clinical_training",
+      "patterns": [
+        "Training kahan hoti hai",
+        "Hospital list batao",
+        "Clinical training ke centers kaun se hain",
+        "Training hospital kaun kaun se hain"
+      ],
+      "responses": [
+        "Training locations:\n- District Hospital (Backundpur)\n- Community Health Centers\n- Regional Hospital (Chartha)\n- Ranchi Neurosurgery & Allied Science Hospital\n"
+      ]
+    },
+    {
+      "tag": "scholarship",
+      "patterns": [
+        "Scholarship milti hai kya",
+        "Financial aid available hai kya",
+        "Scholarship options kya hain",
+        "Fee mein koi concession hai kya"
+      ],
+      "responses": [
+        "Do prakar ki scholarships uplabdh hain:\n- Govt Post-Matric Scholarship (₹18k-₹23k)\n- Labour Ministry Scholarship (₹40k-₹48k) un logon ke liye jo Labour Registration karwayein."
+      ]
+    },
+    {
+      "tag": "seats_info",
+      "patterns": [
+        "Seats kitni hain nursing program mein",
+        "Total kitni seats hain",
+        "Admission ke liye seats availability",
+        "Nursing program mein kitne seats hote hain"
+      ],
+      "responses": [
+        "Is program mein kul 60 seats hain. "
+      ]
+    },
+    {
+      "tag": "eligibility",
+      "patterns": [
+        "Admission ke liye eligibility kya hai",
+        "Nursing college ka criteria kya hai",
+        "Eligibility conditions batao",
+        "Who can apply for nursing program"
+      ],
+      "responses": [
+        "Admission ke liye:\n- 12th mein Biology hona avashyak hai\n- PNT Exam pass karna hoga\n- Age limit: 17 se 35 saal"
+      ]
+    },
+    {
+      "tag": "fallback",
+      "patterns": [],
+      "responses": [
+        "Maaf kijiye, mujhe samajh nahi aaya. Kya aap apna prashn dobara poochhna chahenge?"
+      ]
+    }
+  ]
+}
+
+

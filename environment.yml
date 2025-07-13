@@ -1,0 +1,12 @@
+name: chatbot_env
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - numpy
+  - h5py
+  - pip
+  - pip:
+      - tensorflow==2.13
+      - playsound
+      - pyttsx3

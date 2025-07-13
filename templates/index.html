@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nursing College Chatbot</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      display: flex;
+      height: 100vh;
+      color: #333;
+    }
+
+    .sidebar {
+      width: 25%;
+      background: #ffffff;
+      padding: 20px;
+      border-right: 1px solid #ddd;
+      box-sizing: border-box;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .sidebar h3 {
+      color: #0077b6;
+      margin-bottom: 10px;
+    }
+
+    .sidebar p, .sidebar ul {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .sidebar ul {
+      padding-left: 18px;
+    }
+
+    .chat-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .chatbox {
+      flex: 1;
+      background: #ffffff;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow-y: auto;
+      margin-bottom: 20px;
+    }
+
+    .message {
+      padding: 10px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      max-width: 75%;
+      word-wrap: break-word;
+    }
+
+    .user {
+      background: #d9fdd3;
+      align-self: flex-end;
+    }
+
+    .bot {
+      background: #e6f0ff;
+      align-self: flex-start;
+    }
+
+    .input-area {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    #userInput {
+      width: 50%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    button {
+      padding: 12px 24px;
+      background: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #023e8a;
+    }
+
+    h2 {
+      text-align: center;
+      color: #023e8a;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h3>About Chatbot</h3>
+    <p>This chatbot helps answer queries about the nursing college, admissions, programs, facilities and more. For making it more accessible to everyone, it also reads it's replies.</p>
+    <h3>Example Prompts:</h3>
+    <ul>
+      <li>What courses are offered?</li>
+      <li>How to apply for admission?</li>
+      <li>Hostel facilities available?</li>
+      <li>College location?</li>
+    </ul>
+  </div>
+
+  <div class="chat-container">
+    <h2>Nursing College Chatbot</h2>
+
+    <div class="chatbox" id="chatbox"></div>
+
+    <div class="input-area">
+      <input type="text" id="userInput" placeholder="Type your message here... [Hint: You can cant with a Hi]">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    function sendMessage() {
+      const userText = document.getElementById("userInput").value;
+      if (userText.trim() === "") return;
+      addMessage(userText, "user");
+      document.getElementById("userInput").value = "";
+
+      fetch("/get", {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ message: userText })
+      })
+      .then(response => response.json())
+      .then(data => {
+        addMessage(data.response, "bot");
+        speak(data.response);
+      });
+    }
+
+    function addMessage(text, sender) {
+      const chatbox = document.getElementById("chatbox");
+      const msg = document.createElement("div");
+      msg.className = `message ${sender}`;
+      msg.textContent = text;
+      chatbox.appendChild(msg);
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }
+
+    function speak(text) {
+      const synth = window.speechSynthesis;
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = 'hi-IN';
+      synth.speak(utter);
+    }
+  </script>
+
+</body>
+</html>
