@@ -10,3 +10,4 @@ dependencies:
       - tensorflow==2.13
       - playsound
       - pyttsx3
+ 
